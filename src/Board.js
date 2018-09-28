@@ -152,13 +152,12 @@
       const boardLength = board.length;
       const diagonalLength = boardLength - absDiagonalColIndex;
       let countEntries = 0;
-      let row;
-      let column;
+      let row, column;
       
       if (boardLength - absDiagonalColIndex === 1) {
         return false;
-      } else if(majorDiagonalColumnIndexAtFirstRow >= 0) {
-        row = 0
+      } else if (majorDiagonalColumnIndexAtFirstRow >= 0) {
+        row = 0;
         column = absDiagonalColIndex;
       } else {
         row = absDiagonalColIndex;
@@ -182,10 +181,10 @@
       for (let row = 0; row < board.length; row++) {
         for (let column = 0; column < board.length; column++) {
           if (board[row][column] === 1) {
-             let firstRowColIndex = this._getFirstRowColumnIndexForMajorDiagonalOn(row, column);
-             let hasConflict = this.hasMajorDiagonalConflictAt(firstRowColIndex);
+            let firstRowColIndex = this._getFirstRowColumnIndexForMajorDiagonalOn(row, column);
+            let hasConflict = this.hasMajorDiagonalConflictAt(firstRowColIndex);
              
-            if(hasConflict) {
+            if (hasConflict) {
               return true;
             }
           }
